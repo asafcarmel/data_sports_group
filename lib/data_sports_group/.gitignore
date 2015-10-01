@@ -7,7 +7,3 @@
 /pkg/
 /spec/reports/
 /tmp/
-.project
-ex.sh
-ex.*
-spec/cassettes
