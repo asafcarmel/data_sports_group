@@ -6,20 +6,21 @@ require 'time'
 module DataSportsGroup
   class Api
     attr_accessor :key, :client, :user, :password
+    
     def initialize(key, client, user, password)
-      @key = key
-      @client = client
-      @user = user
-      @password = password
+      self.key = key
+      self.client = client
+      self.user = user
+      self.password = password
     end
 
     def get_uri(url)
-      "http://#{@user}:#{@password}@api.datasportsgroup.com/clients/#{@client}#{url}"
+      "http://#{self.user}:#{self.password}@api.datasportsgroup.com/clients/#{self.client}#{url}"
     end
 
     def get_params(params)
-      return {authkey: @key, client: @client} if params.nil?
-      params.merge( authkey: @key, client: @client)
+      return {authkey: self.key, client: self.client} if params.nil?
+      params.merge(authkey: self.key, client: self.client)
     end
 
     #  def self.get_auth

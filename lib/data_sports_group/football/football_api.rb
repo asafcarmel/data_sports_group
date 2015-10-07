@@ -1,3 +1,4 @@
+require 'data_sports_group/api'
 require 'data_sports_group/football/team'
 require 'data_sports_group/football/player'
 require 'data_sports_group/football/match'
@@ -5,7 +6,7 @@ require 'data_sports_group/football/score'
 
 module DataSportsGroup
   module Football
-    class FootballApi < Api
+    class FootballApi < DataSportsGroup::Api
       def get_season_team(season_id)
         xml = response_xml('/get_season_team', season_id: season_id)
         return Team.to_list(xml)

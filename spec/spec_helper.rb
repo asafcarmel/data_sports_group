@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'api'
+require 'data_sports_group/api'
 require 'webmock/rspec'
 require 'vcr'
 
