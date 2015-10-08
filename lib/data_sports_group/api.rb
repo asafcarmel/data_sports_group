@@ -1,4 +1,5 @@
 require 'data_sports_group/version'
+require 'data_sports_group/exception'
 require 'nokogiri'
 require 'rest_client'
 require 'time'
