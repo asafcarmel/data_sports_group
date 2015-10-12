@@ -16,7 +16,11 @@ module DataSportsGroup
       end
 
       def enforce_attributes_type
-        string_to_datetime(:date_of_birth)
+        begin
+          string_to_datetime(:date_of_birth) 
+        rescue => exception
+          self.date_of_birth = nil
+        end  
       end
     end
   end

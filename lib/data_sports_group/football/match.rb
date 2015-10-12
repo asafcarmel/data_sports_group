@@ -10,7 +10,7 @@ module DataSportsGroup
       attr_accessor :player_stats
       
       def self.xml_path
-        '/datasportsgroup/competition/season/rounds/match'
+        '/datasportsgroup/competition/season/rounds//match'
       end
 
       def self.xml_name
