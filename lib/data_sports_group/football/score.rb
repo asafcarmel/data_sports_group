@@ -7,7 +7,7 @@ module DataSportsGroup
       extend  DataSportsGroup::XmlTranslator
       include DataSportsGroup::StringConverter
       def self.xml_path
-        '/datasportsgroup/competition/season//player'
+        '//player_stats/player'
       end
 
       def self.xml_name
