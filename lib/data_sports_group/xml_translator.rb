@@ -9,7 +9,8 @@ module DataSportsGroup
 
     def to_object(attributes)
       instance = new
-      attributes.each { |k,v| instance[k] = v.value }
+      members = instance.members.map(&:to_s)
+      attributes.each { |k,v| instance[k] = v.value if members.include?(k) }
       instance.enforce_attributes_type
       instance
     end
