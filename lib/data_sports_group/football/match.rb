@@ -8,7 +8,7 @@ module DataSportsGroup
       include DataSportsGroup::StringConverter
 
       attr_accessor :player_stats
-      
+
       def self.xml_path
         '/datasportsgroup/competition/season/rounds//match'
       end
@@ -21,7 +21,11 @@ module DataSportsGroup
         string_to_datetime(:date, "#{self.date} #{self.time}")
         string_to_datetime(:date_utc, "#{self.date_utc} #{self.time_utc}")
         string_to_integer(:attendance)
-        string_to_datetime(:last_updated)
+        if self.last_updated == '0000-00-00 00:00:00'
+          self.last_updated = nil
+        else
+          string_to_datetime(:last_updated)
+        end
       end
     end
   end
