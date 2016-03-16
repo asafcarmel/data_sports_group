@@ -11,3 +11,4 @@
 ex.sh
 ex.*
 spec/cassettes
+.byebug_history
