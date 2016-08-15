@@ -2,11 +2,11 @@ require 'data_sports_group/xml_translator'
 require 'data_sports_group/string_converter'
 
 module DataSportsGroup
-  module Football
+  module DsgBase
     class Team < Struct.new(:team_id, :current_team_name, :original_team_name, :type, :gender, :status, :last_updated)
       extend  DataSportsGroup::XmlTranslator
       include DataSportsGroup::StringConverter
-      
+
       def self.xml_path
         '/datasportsgroup/competition/season/team'
       end

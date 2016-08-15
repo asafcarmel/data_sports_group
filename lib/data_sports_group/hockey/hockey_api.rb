@@ -1,13 +1,13 @@
 require 'data_sports_group/base/base_api'
-require 'data_sports_group/baseball/score'
-require 'data_sports_group/baseball/match'
+require 'data_sports_group/hockey/score'
+require 'data_sports_group/hockey/match'
 
 module DataSportsGroup
-  module Baseball
-    class BaseballApi < DataSportsGroup::DsgBase::BaseApi
+  module Hockey
+    class HockeyApi < DataSportsGroup::DsgBase::BaseApi
 
       def path_prefix
-        '/baseball'
+        '/icehockey'
       end
 
       def build_match_list(xml)
