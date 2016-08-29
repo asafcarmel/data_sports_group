@@ -13,7 +13,7 @@ module DataSportsGroup
       str = self[prop]
 
       if str.class == String
-        self[prop] = str.strip.empty? ? 0 : Integer(str)
+        self[prop] = str.strip.empty? ? 0 : str.to_i
       end
     end
   end
