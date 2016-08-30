@@ -16,7 +16,7 @@ module DataSportsGroup
       end
 
       def get_squad(team_id)
-        xml = response_xml(path_prefix + '/get_squad', team: team_id)
+        xml = response_xml('/get_squad', team: team_id)
         return DataSportsGroup::DsgBase::Player.to_list(xml)
       end
 

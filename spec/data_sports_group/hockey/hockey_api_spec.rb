@@ -23,7 +23,7 @@ describe DataSportsGroup::Hockey::HockeyApi, vcr: {
         let(:andronov) { DataSportsGroup::DsgBase::Player.new('355650', 'Sergei', 'Mozyakin', 'S. Mozyakin', Date.new(1981,3,30), '', 'Russia', 'Russia', 'Forward') }
         it 'fetches players' do
           players = hockey.get_squad(25588)
-          expect(players.size).to eq(25)
+          expect(players.size).to eq(28)
           expect(players.first).to eql(andronov)
         end
       end
