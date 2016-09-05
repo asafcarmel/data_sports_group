@@ -3,24 +3,15 @@ require 'data_sports_group/string_converter'
 
 module DataSportsGroup
   module Football
-    class PlayerInLinup < Struct.new(:player_id, :team_id)
+    class FeedState < Struct.new(:state)
       extend  DataSportsGroup::XmlTranslator
       include DataSportsGroup::StringConverter
       
       def self.xml_path
-        '//events/lineups/event'
+        '/match'
       end
-
-      def self.xml_name
-        'event'
-      end
-
-      INTEGERS = [
-        
-      ]
 
       def enforce_attributes_type
-        INTEGERS.each { |s| string_to_integer(s) }
       end
     end
   end

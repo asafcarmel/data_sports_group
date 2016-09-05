@@ -7,6 +7,7 @@ require 'data_sports_group/football/match_current_minute'
 require 'data_sports_group/football/match_live_event'
 require 'data_sports_group/football/player_in_lineup'
 require 'data_sports_group/football/player_on_bench'
+require 'data_sports_group/football/feed_state'
 
 module DataSportsGroup
   module Football
@@ -34,13 +35,15 @@ module DataSportsGroup
       end
 
       def get_matches_current_minute
-         xml = response_xml('/get_matches_day', playing: 'yes')
-         MatchCurrentMinute.to_list(xml)
+        xml = response_xml('/get_matches_day', playing: 'yes')
+        MatchCurrentMinute.to_list(xml)
       end
 
       def get_live_events(match_id)
-         xml = response_xml('/get_commentary', type: 'match', id: match_id)
-         MatchLiveEvent.to_list(xml)
+        xml = response_xml('/get_commentary', type: 'match', id: match_id)
+        events = MatchLiveEvent.to_list(xml)
+        feed_state = FeedState.to_object(xml)
+        {events: events, feed_state: feed_state}
       end
 
       def get_match_lineups(match_id)
