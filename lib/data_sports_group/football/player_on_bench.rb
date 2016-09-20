@@ -8,7 +8,7 @@ module DataSportsGroup
       include DataSportsGroup::StringConverter
       
       def self.xml_path
-        '/datasportsgroup/competition/season/rounds/match/events/subs_on_bench/event'
+        '//events/subs_on_bench/event'
       end
 
       def self.xml_name
@@ -16,7 +16,6 @@ module DataSportsGroup
       end
 
       INTEGERS = [
-        :player_id, :team_id
       ]
 
       def enforce_attributes_type
